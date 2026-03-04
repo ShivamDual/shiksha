@@ -87,6 +87,41 @@ def subject(subject_name):
     conn.close()
     return render_template('subject.html', terms=[dict(t) for t in terms], subject=subject_name)
 
+@app.route('/contribute', methods=['GET', 'POST'])
+def contribute():
+    if request.method == 'POST':
+        english = request.form.get('english', '').strip()
+        nepali = request.form.get('nepali', '').strip()
+        subject = request.form.get('subject', '').strip()
+        grade = request.form.get('grade', '').strip()
+        definition = request.form.get('definition', '').strip()
+        example = request.form.get('example', '').strip()
+        submitted_by = request.form.get('submitted_by', '').strip()
+
+        if not english or not nepali or not subject:
+            return render_template('contribute.html', error="English term, Nepali term and subject are required.", success=False)
+
+        conn = get_db()
+        conn.execute('''
+            CREATE TABLE IF NOT EXISTS pending_terms (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                english TEXT, nepali TEXT, subject TEXT,
+                grade TEXT, definition TEXT, example TEXT,
+                submitted_by TEXT, status TEXT DEFAULT 'pending',
+                timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+            )
+        ''')
+        conn.execute('''
+            INSERT INTO pending_terms (english, nepali, subject, grade, definition, example, submitted_by)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+        ''', (english, nepali, subject, grade, definition, example, submitted_by))
+        conn.commit()
+        conn.close()
+
+        return render_template('contribute.html', success=True, error=None)
+
+    return render_template('contribute.html', success=False, error=None)
+
 if __name__ == '__main__':
     init_db()
     app.run(host='0.0.0.0', port=5000, debug=True)
