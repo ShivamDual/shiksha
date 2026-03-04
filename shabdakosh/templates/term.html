@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}{{ term.english }}{% endblock %}
+
+{% block content %}
+<div class="term-page">
+    <a href="/" class="back-link">← Back to Search</a>
+    
+    <div class="term-card">
+        <div class="term-header">
+            <h1 class="term-english">{{ term.english }}</h1>
+            <h2 class="term-nepali">{{ term.nepali }}</h2>
+            {% if term.pronunciation %}
+            <p class="pronunciation">/ {{ term.pronunciation }} /</p>
+            {% endif %}
+            <span class="subject-badge">{{ term.subject }}</span>
+        </div>
+
+        {% if term.definition %}
+        <div class="term-section">
+            <h3>परिभाषा (Definition)</h3>
+            <p>{{ term.definition }}</p>
+        </div>
+        {% endif %}
+
+        {% if term.example %}
+        <div class="term-section">
+            <h3>उदाहरण (Example)</h3>
+            <p class="example">{{ term.example }}</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

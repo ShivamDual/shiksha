@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1>STEM शब्दकोश</h1>
+    <p class="subtitle">Search 500+ STEM terms in Nepali and English</p>
+    
+    <div class="search-box">
+        <input 
+            type="text" 
+            id="search-input" 
+            placeholder="Search... e.g. Osmosis, अन्तःशोषण, Algorithm"
+            autocomplete="off"
+        >
+        <div id="search-results"></div>
+    </div>
+</div>
+
+<div class="subjects">
+    <h2>Browse by Subject</h2>
+    <div class="subject-grid">
+        <a href="/subject/mathematics" class="subject-card">
+            <span class="icon">📐</span>
+            <span class="name">Mathematics</span>
+            <span class="nepali">गणित</span>
+        </a>
+        <a href="/subject/physics" class="subject-card">
+            <span class="icon">⚡</span>
+            <span class="name">Physics</span>
+            <span class="nepali">भौतिकशास्त्र</span>
+        </a>
+        <a href="/subject/chemistry" class="subject-card">
+            <span class="icon">🧪</span>
+            <span class="name">Chemistry</span>
+            <span class="nepali">रसायनशास्त्र</span>
+        </a>
+        <a href="/subject/biology" class="subject-card">
+            <span class="icon">🧬</span>
+            <span class="name">Biology</span>
+            <span class="nepali">जीवविज्ञान</span>
+        </a>
+        <a href="/subject/computer" class="subject-card">
+            <span class="icon">💻</span>
+            <span class="name">Computer Science</span>
+            <span class="nepali">कम्प्युटर विज्ञान</span>
+        </a>
+    </div>
+</div>
+{% endblock %}
+

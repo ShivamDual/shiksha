@@ -1,0 +1,280 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f8f9fa;
+    color: #212529;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAV */
+nav {
+    background: #1a5276;
+    color: white;
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-brand .nepali {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.nav-brand .english {
+    font-size: 20px;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.nav-subtitle {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* MAIN */
+main {
+    flex: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    width: 100%;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.hero h1 {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: 42px;
+    color: #1a5276;
+    margin-bottom: 8px;
+}
+
+.hero .subtitle {
+    color: #6c757d;
+    font-size: 16px;
+    margin-bottom: 32px;
+}
+
+/* SEARCH */
+.search-box {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 16px;
+    border: 2px solid #dee2e6;
+    border-radius: 12px;
+    outline: none;
+    transition: border-color 0.2s;
+    font-family: 'Inter', sans-serif;
+}
+
+.search-box input:focus {
+    border-color: #1a5276;
+}
+
+#search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    margin-top: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 100;
+    display: none;
+}
+
+.result-item {
+    padding: 12px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #f1f3f5;
+    transition: background 0.15s;
+}
+
+.result-item:hover {
+    background: #f8f9fa;
+}
+
+.result-item .term-english {
+    font-weight: 600;
+    color: #1a5276;
+}
+
+.result-item .term-nepali {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    color: #495057;
+    margin-left: 8px;
+}
+
+.result-item .term-subject {
+    font-size: 12px;
+    color: #adb5bd;
+    margin-top: 2px;
+}
+
+/* SUBJECTS */
+.subjects h2 {
+    font-size: 22px;
+    color: #1a5276;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.subject-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+}
+
+.subject-card {
+    background: white;
+    border: 2px solid #dee2e6;
+    border-radius: 12px;
+    padding: 24px 16px;
+    text-align: center;
+    text-decoration: none;
+    color: #212529;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.subject-card:hover {
+    border-color: #1a5276;
+    transform: translateY(-2px);
+}
+
+.subject-card .icon {
+    font-size: 32px;
+}
+
+.subject-card .name {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.subject-card .nepali {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: 13px;
+    color: #6c757d;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #adb5bd;
+    font-size: 13px;
+    border-top: 1px solid #dee2e6;
+}
+
+/* TERM PAGE */
+.term-page {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.back-link {
+    display: inline-block;
+    color: #1a5276;
+    text-decoration: none;
+    margin-bottom: 24px;
+    font-weight: 500;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.term-card {
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    border: 2px solid #dee2e6;
+}
+
+.term-header {
+    border-bottom: 2px solid #f1f3f5;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+}
+
+.term-header .term-english {
+    font-size: 36px;
+    color: #1a5276;
+    margin-bottom: 8px;
+}
+
+.term-header .term-nepali {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: 28px;
+    color: #495057;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.pronunciation {
+    color: #6c757d;
+    font-style: italic;
+    margin-bottom: 12px;
+}
+
+.subject-badge {
+    background: #1a5276;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.term-section {
+    margin-bottom: 24px;
+}
+
+.term-section h3 {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: 16px;
+    color: #6c757d;
+    margin-bottom: 8px;
+}
+
+.term-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #212529;
+}
+
+.term-section .example {
+    background: #f8f9fa;
+    padding: 16px;
+    border-radius: 8px;
+    border-left: 4px solid #1a5276;
+}
