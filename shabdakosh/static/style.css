@@ -278,3 +278,73 @@ footer {
     border-radius: 8px;
     border-left: 4px solid #1a5276;
 }
+
+/* SUBJECT PAGE */
+.subject-page {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.subject-title {
+    font-size: 32px;
+    color: #1a5276;
+    margin-bottom: 4px;
+}
+
+.term-count {
+    color: #6c757d;
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+.terms-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.term-row {
+    background: white;
+    border: 2px solid #dee2e6;
+    border-radius: 10px;
+    padding: 16px 20px;
+    text-decoration: none;
+    color: #212529;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: border-color 0.2s, transform 0.15s;
+}
+
+.term-row:hover {
+    border-color: #1a5276;
+    transform: translateX(4px);
+}
+
+.term-row-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.term-row-english {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.term-row-nepali {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    color: #6c757d;
+    font-size: 15px;
+}
+
+.term-row-arrow {
+    color: #adb5bd;
+    font-size: 18px;
+}
+
+.no-terms {
+    color: #6c757d;
+    text-align: center;
+    padding: 40px;
+}
