@@ -1,8 +1,13 @@
 from flask import Flask, render_template, request, jsonify
 import sqlite3
 import os
+import sys
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+from dashboard.app import dashboard
 
 app = Flask(__name__)
+app.secret_key = "shiksha-secret-2024"
+app.register_blueprint(dashboard, url_prefix='/dashboard')
 DB_PATH = os.path.join(os.path.dirname(__file__), 'database.db')
 
 def get_db():
