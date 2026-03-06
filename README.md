@@ -4,7 +4,7 @@ An offline-first bilingual STEM glossary built for students in rural Nepal who s
 
 ## The Problem
 
-In Nepal, STEM subjects are taught in English, but most students in rural areas grow up speaking Nepali. When a student in Karjanha encounters a word like "photosynthesis" or "algorithm" for the first time, there is no quick way to find its Nepali meaning, pronunciation, or a locally relevant example.
+In Nepal, STEM subjects are taught in English, but most students in rural areas grow up speaking Nepali. When a student in Nepal, specifically "Karjanha" encounters a word like "photosynthesis" or "algorithm" for the first time, there is no quick way to find its Nepali meaning, pronunciation, or a locally relevant example.
 
 Textbooks don't have glossaries. Dictionaries don't have STEM terms. And in schools without reliable internet, Google is not an option.
 
