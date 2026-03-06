@@ -22,7 +22,7 @@ searchInput.addEventListener('input', function() {
                 }
 
                 searchResults.innerHTML = data.results.map(term => `
-                    <div class="result-item" onclick="window.location='/term/${term.id}'">
+                    <div class="result-item" onclick="logAndGo(${term.id}, '${term.english}')">
                         <div>
                             <span class="term-english">${term.english}</span>
                             <span class="term-nepali">${term.nepali}</span>
@@ -41,3 +41,10 @@ document.addEventListener('click', function(e) {
         searchResults.style.display = 'none';
     }
 });
+
+function logAndGo(termId, query) {
+    fetch(`/api/log?q=${encodeURIComponent(query)}&term_id=${termId}`)
+        .then(() => {
+            window.location = `/term/${termId}`;
+        });
+}

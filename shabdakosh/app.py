@@ -60,13 +60,18 @@ def search():
     ''', (f'%{query}%', f'%{query}%')).fetchall()
     conn.close()
 
-    # Log the search
-    conn = get_db()
-    conn.execute('INSERT INTO usage_log (search_query) VALUES (?)', (query,))
-    conn.commit()
-    conn.close()
-
     return jsonify({'results': [dict(r) for r in results]})
+
+@app.route('/api/log')
+def log_search():
+    query = request.args.get('q', '').strip()
+    term_id = request.args.get('term_id', None)
+    if query:
+        conn = get_db()
+        conn.execute('INSERT INTO usage_log (search_query, term_id) VALUES (?, ?)', (query, term_id))
+        conn.commit()
+        conn.close()
+    return jsonify({'ok': True})
 
 @app.route('/term/<int:term_id>')
 def term(term_id):
