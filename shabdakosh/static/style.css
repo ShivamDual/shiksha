@@ -11,6 +11,8 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 /* NAV */
@@ -483,4 +485,25 @@ footer {
 .nav-links a:hover {
     opacity: 1;
     background: rgba(255,255,255,0.1);
+}
+
+@media (max-width: 600px) {
+    nav {
+        padding: 12px 16px;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    .nav-brand .english {
+        font-size: 16px;
+    }
+    .nav-brand .nepali {
+        font-size: 20px;
+    }
+    .nav-links {
+        font-size: 13px;
+        gap: 8px;
+    }
+    .hero h1 {
+        font-size: 28px;
+    }
 }

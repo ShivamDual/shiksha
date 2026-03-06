@@ -2,6 +2,23 @@
 
 An offline-first bilingual STEM glossary built for students in rural Nepal who study science and mathematics in English but think in Nepali.
 
+## Screenshots
+
+![Homepage](docs/screenshots/homepage.png)
+*Homepage with bilingual search*
+
+![Search](docs/screenshots/search.png)
+*Live search results in English and Nepali*
+
+![Term Page](docs/screenshots/term.png)
+*Term detail page with pronunciation and Nepal-specific example*
+
+![Subject Page](docs/screenshots/subject.png)
+*Browse all 107 Mathematics terms*
+
+![Dashboard](docs/screenshots/dashboard.png)
+*Teacher dashboard with usage analytics*
+
 ## The Problem
 
 In Nepal, STEM subjects are taught in English, but most students in rural areas grow up speaking Nepali. When a student in Nepal, specifically "Karjanha" encounters a word like "photosynthesis" or "algorithm" for the first time, there is no quick way to find its Nepali meaning, pronunciation, or a locally relevant example.
