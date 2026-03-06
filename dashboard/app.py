@@ -7,7 +7,7 @@ dashboard = Blueprint('dashboard', __name__, template_folder='templates')
 
 DB_PATH = os.path.join(os.path.dirname(__file__), '..', 'shabdakosh', 'database.db')
 
-PASSWORD = "shiksha2024"
+PASSWORD = "shiksha2026"
 
 def login_required(f):
     @functools.wraps(f)
